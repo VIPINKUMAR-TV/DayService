@@ -12,7 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "day_categories")
+@Table(name = "day_categories",schema = "daydb")
 @Getter
 @Setter
 public class DayCategory {
@@ -41,6 +41,7 @@ public class DayCategory {
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(
         name = "day_category_amounts",
+        		schema = "daydb",
         joinColumns = @JoinColumn(name = "day_category_id")
     )
     @Column(name = "amount")

@@ -12,7 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "days")
+@Table(name = "days",schema = "daydb")
 @Getter
 @Setter
 public class Day {
