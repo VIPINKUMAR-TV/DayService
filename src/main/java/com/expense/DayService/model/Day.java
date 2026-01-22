@@ -17,8 +17,16 @@ import lombok.Setter;
 @Setter
 public class Day {
 
+    //@Id
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "day_seq")
+    @SequenceGenerator(
+        name = "day_seq",
+        sequenceName = "daydb.days_seq",
+        allocationSize = 1
+    )
+    @Column(name = "day_id")
     private Long dayId;
 
     private Long userId;
